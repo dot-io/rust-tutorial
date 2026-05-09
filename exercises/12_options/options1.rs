@@ -27,7 +27,7 @@ mod tests {
         // Option?
         let ice_creams = maybe_ice_cream(12);
 
-        assert_eq!(ice_creams, 5); // Don't change this line.
+        assert_eq!(ice_creams.unwrap(), 5); // Don't change this line.
     }
 
     #[test]

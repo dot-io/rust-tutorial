@@ -32,11 +32,13 @@ mod my_module {
         for (string, command) in input {
             match command {
                 Command::Uppercase => output.push(string.to_uppercase()), //do uppercase
-                Command::Trim => output.push(string.trim()),
+                Command::Trim => output.push(string.trim().into()),
                 Command::Append(x) => {
+                    let mut new_string: String = string.into();
                     for _ in 0..x {
-                        output.push(string.push_str("bar"));
+                        new_string.push_str("bar");
                     }
+                    output.push(new_string);
                 }
             }
         }
